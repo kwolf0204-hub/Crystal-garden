@@ -614,6 +614,49 @@ footer {
 .feature-option h4 { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--gold); margin-bottom: 0.5rem; }
 .feature-option p { font-size: 0.95rem; margin-bottom: 1rem; }
 @media(max-width:768px) { .feature-class { grid-template-columns: 1fr; padding: 1.5rem; } .feature-options { grid-template-columns: 1fr; } }
+
+/* HOLIDAY SPARKLES: remove this block, the holiday-sky div in the hero, and the holiday script before </body> to turn off */
+.hero { position: relative; overflow: hidden; }
+.hero > *:not(.holiday-sky) { position: relative; z-index: 1; }
+.holiday-sky { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.holiday-sky span {
+  position: absolute; top: -2rem; line-height: 1;
+  animation: holiday-fall linear infinite, holiday-twinkle ease-in-out infinite alternate;
+  will-change: transform;
+}
+.holiday-sky .spark { color: var(--gold-light); text-shadow: 0 0 6px rgba(212,181,106,0.8); }
+.holiday-sky .flake { color: #fff; opacity: 0.85; text-shadow: 0 0 4px rgba(255,255,255,0.6); }
+.holiday-header { width: 100%; text-align: center; margin: 0 auto 2.25rem; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.85)); }
+.holiday-header .hh-main {
+  display: block;
+  font-family: 'Cinzel', serif; font-weight: 500;
+  font-size: clamp(1.7rem, 7vw, 4.2rem);
+  line-height: 1.12; letter-spacing: 0.06em;
+  text-wrap: balance;
+  color: var(--gold-light);
+  background: linear-gradient(100deg, #a8862f 0%, #d4b56a 30%, #fff4d2 48%, #d4b56a 62%, #a8862f 100%);
+  background-size: 250% 100%; background-position: 100% 0;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hh-shimmer 6s ease-in-out infinite;
+}
+.holiday-header .hh-sub {
+  display: block; margin-top: 0.4rem;
+  font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400;
+  font-size: clamp(1.3rem, 4.2vw, 2.3rem);
+  color: var(--cream, #f5efe0);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.95);
+}
+@keyframes hh-shimmer { 0%, 35% { background-position: 100% 0; } 75%, 100% { background-position: 0% 0; } }
+@media (prefers-reduced-motion: reduce) { .holiday-header .hh-main { animation: none; background-position: 50% 0; } }
+@keyframes holiday-fall {
+  from { transform: translate(0, 0) rotate(0deg); }
+  to { transform: translate(var(--drift), 110vh) rotate(var(--spin)); }
+}
+@keyframes holiday-twinkle { from { opacity: 0.25; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .holiday-sky span { animation: none; top: var(--rest); opacity: 0.6; }
+}
 </style>
 </head>
 <body>
@@ -621,8 +664,8 @@ footer {
 <!-- ANNOUNCEMENT TICKER: to change announcements, edit the lines in BOTH copies below (the second copy keeps the scroll seamless) -->
 <div class="ticker" role="region" aria-label="Announcements">
   <div class="ticker-track">
-    <div><a href="#classes">Monthly Intuitive Development Circle · Tuesday, October 6</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#classes">Monthly Guided Meditation &amp; Breath Work · Thursday, October 15</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#communing">Communing with the Ancestors · Sunday, October 25 · 10 AM–5 PM · $111 · 3 chairs at the table remain · text 612-805-7111</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#ancestry-healing" class="ticker-feature">Starting in November · Ancestry Healing: The Journey Back to You · 8 classes · in person one Sunday a month (10 seats) or Zoom Wednesday nights · $55 a month for 8 months · text 612-805-7111</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#retreats">The Wisdom of Water winter retreat · February 5–8 · $444 all inclusive</a><span class="ticker-star" aria-hidden="true">✦</span><a href="https://www.facebook.com/share/18wNDt8nBB/?mibextid=wwXIfr" target="_blank" rel="noopener">Holiday pre-sales on merchandise are up on Facebook · want something else? Let me be your personal shopper · text me what you’re looking for · 612-805-7111</a><span class="ticker-star" aria-hidden="true">✦</span></div>
-    <div aria-hidden="true"><a href="#classes" tabindex="-1">Monthly Intuitive Development Circle · Tuesday, October 6</a><span class="ticker-star">✦</span><a href="#classes" tabindex="-1">Monthly Guided Meditation &amp; Breath Work · Thursday, October 15</a><span class="ticker-star">✦</span><a href="#communing" tabindex="-1">Communing with the Ancestors · Sunday, October 25 · 10 AM–5 PM · $111 · 3 chairs at the table remain · text 612-805-7111</a><span class="ticker-star">✦</span><a href="#ancestry-healing" class="ticker-feature" tabindex="-1">Starting in November · Ancestry Healing: The Journey Back to You · 8 classes · in person one Sunday a month (10 seats) or Zoom Wednesday nights · $55 a month for 8 months · text 612-805-7111</a><span class="ticker-star">✦</span><a href="#retreats" tabindex="-1">The Wisdom of Water winter retreat · February 5–8 · $444 all inclusive</a><span class="ticker-star">✦</span><a href="https://www.facebook.com/share/18wNDt8nBB/?mibextid=wwXIfr" target="_blank" rel="noopener" tabindex="-1">Holiday pre-sales on merchandise are up on Facebook · want something else? Let me be your personal shopper · text me what you’re looking for · 612-805-7111</a><span class="ticker-star">✦</span></div>
+    <div><a href="#shop" class="ticker-feature">Your holiday headquarters for all things magical</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#classes">Monthly Meditation &amp; Breathwork · Thursday, November 12 · 6:30–8 PM</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#classes">Monthly Intuitive Development · Tuesday, November 17 · 6:30–8:30 PM</a><span class="ticker-star" aria-hidden="true">✦</span><a href="https://kristinwolf.as.me">Black Friday · Friday, November 27 · open for appointments in the healing room</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#shop-visit">Small Business Saturday · the shop is open Saturday, November 28 · 9 AM–4 PM · Zimmerman</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#ancestry-healing" class="ticker-feature">Ancestral Healing: The Journey Back to You · first class Sunday, November 29 · 9 AM–noon · in person in Zimmerman one Sunday a month through June (10 seats) or from anywhere with each class emailed to you plus one Zoom call a month · $55 a month for 8 months · text 612-805-7111</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#books">November 29 · release day for My Mama’s a Peacock and My Gigi Is a Dragonfly</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#retreats">The Wisdom of Water winter retreat · February 5–8 · $444 all inclusive</a><span class="ticker-star" aria-hidden="true">✦</span><a href="https://substack.com/@kristinwolf2/note/c-379983542?r=3p1amq&amp;utm_medium=ios&amp;utm_source=notes-share-action" target="_blank" rel="noopener">The November newsletter is up on Substack</a><span class="ticker-star" aria-hidden="true">✦</span></div>
+    <div aria-hidden="true"><a href="#shop" class="ticker-feature" tabindex="-1">Your holiday headquarters for all things magical</a><span class="ticker-star">✦</span><a href="#classes" tabindex="-1">Monthly Meditation &amp; Breathwork · Thursday, November 12 · 6:30–8 PM</a><span class="ticker-star">✦</span><a href="#classes" tabindex="-1">Monthly Intuitive Development · Tuesday, November 17 · 6:30–8:30 PM</a><span class="ticker-star">✦</span><a href="https://kristinwolf.as.me" tabindex="-1">Black Friday · Friday, November 27 · open for appointments in the healing room</a><span class="ticker-star">✦</span><a href="#shop-visit" tabindex="-1">Small Business Saturday · the shop is open Saturday, November 28 · 9 AM–4 PM · Zimmerman</a><span class="ticker-star">✦</span><a href="#ancestry-healing" class="ticker-feature" tabindex="-1">Ancestral Healing: The Journey Back to You · first class Sunday, November 29 · 9 AM–noon · in person in Zimmerman one Sunday a month through June (10 seats) or from anywhere with each class emailed to you plus one Zoom call a month · $55 a month for 8 months · text 612-805-7111</a><span class="ticker-star">✦</span><a href="#books" tabindex="-1">November 29 · release day for My Mama’s a Peacock and My Gigi Is a Dragonfly</a><span class="ticker-star">✦</span><a href="#retreats" tabindex="-1">The Wisdom of Water winter retreat · February 5–8 · $444 all inclusive</a><span class="ticker-star">✦</span><a href="https://substack.com/@kristinwolf2/note/c-379983542?r=3p1amq&amp;utm_medium=ios&amp;utm_source=notes-share-action" target="_blank" rel="noopener" tabindex="-1">The November newsletter is up on Substack</a><span class="ticker-star">✦</span></div>
   </div>
 </div>
 
@@ -646,6 +689,8 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
+  <div class="holiday-sky" aria-hidden="true"></div>
+  <h2 class="holiday-header"><span class="hh-main">Your Holiday Headquarters</span><span class="hh-sub">for all things magical</span></h2>
   <img src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/63D2DFEA-2A75-4847-AED1-968D9CBEB77F.png" alt="Magic Mushrooms in the Crystal Garden" style="width:280px;max-width:80%;height:auto;border-radius:12px;margin-bottom:2rem;box-shadow:0 4px 30px rgba(0,0,0,0.8);">
   <div class="hero-eyebrow">Magic Mushrooms in the Crystal Garden</div>
   <h1>Kristin Wolf<span>Metaphysical Teacher · Channeler · Soul Cartographer · Crystal Healer</span></h1>
@@ -924,7 +969,7 @@ setInterval(function(){ showTestimonial((currentTestimonial+1) % 7); }, 5000);
     <div class="feature-class" id="ancestry-healing">
       <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/E054D1C0-88B8-412A-B833-9FD4937573F3.png" alt="Ancestry Healing: The Journey Back to You, an eight class journey">
       <div>
-        <div class="section-label">8-Month Class · Begins in November</div>
+        <div class="section-label">8-Month Class · First Class Sunday, November 29</div>
         <h3>Ancestry Healing</h3>
         <div class="feature-sub">The Journey Back to You</div>
         <p>Come join me on an eight class journey. We start with you, then move through family and bloodline, ancestors of place and land, collective humanity, star ancestors and your galactic connections, and then integration, your journey back home.</p>
@@ -932,11 +977,11 @@ setInterval(function(){ showTestimonial((currentTestimonial+1) % 7); }, 5000);
           <div class="feature-option">
             <h4>In Person</h4>
             <p>One Sunday a month, 9 AM–noon<br>Zimmerman, MN<br>Limited to 10 people<br>Miss a Sunday? Join on Zoom.</p>
-            <a href="sms:6128057111" class="btn btn-fill">Text to Join In Person</a>
+            <a href="https://kristinwolf.as.me/?appointmentType=100235749" class="btn btn-fill">Sign Up for the In-Person Class</a>
           </div>
           <div class="feature-option">
             <h4>Zoom</h4>
-            <p>Wednesday night calls<br>Join from anywhere<br>Unlimited attendance</p>
+            <p>Each class emailed to you<br>One Zoom call a month<br>Join from anywhere</p>
             <a href="sms:6128057111" class="btn btn-fill">Text to Join on Zoom</a>
           </div>
         </div>
@@ -947,14 +992,14 @@ setInterval(function(){ showTestimonial((currentTestimonial+1) % 7); }, 5000);
 
     <div class="events-grid">
       <div class="event-card">
-        <div class="event-date">Tuesday, October 6 · 6:30–8:30 PM · Zimmerman, MN</div>
+        <div class="event-date">Tuesday, November 17 · 6:30–8:30 PM · Zimmerman, MN</div>
         <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/57A3CE34-4373-4C96-B33A-63D06D01C26D.png" alt="Intuitive Development Circle" style="width:100%;height:auto;border-radius:4px;margin-bottom:1rem;display:block;">
         <h4>Intuitive Development Circle</h4>
         <p>The shop · Zimmerman, MN<br>$22 per gathering · Limited to 8 spots<br>A safe and supportive space to explore your intuition, deepen your connection, and remember what you already know. Different topics each gathering — energy, psychic senses, divination, crystals, psychometry, channeling, discernment, meditation. All levels welcome. Come curious, leave more connected. Drop in whenever a topic calls to you — no need to attend every one.</p>
         <a href="https://kristinwolf.as.me/?appointmentType=98065346" class="btn btn-fill">Book Now</a>
       </div>
       <div class="event-card">
-        <div class="event-date">Thursday, October 15 · 6:30–8:00 PM · Zimmerman, MN</div>
+        <div class="event-date">Thursday, November 12 · 6:30–8:00 PM · Zimmerman, MN</div>
         <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/F9FB519A-A88E-4BC6-AA01-C6EC14FB7418.png" alt="Guided Meditation and Breath Work" style="width:100%;height:auto;border-radius:4px;margin-bottom:1rem;display:block;">
         <h4>Guided Meditation &amp; Breath Work</h4>
         <p>The shop · Zimmerman, MN<br>$44 per gathering · Limited to 6 spots — sign up early<br>Step out of the noise and give yourself space to breathe, release, restore, and reconnect. Each month's gathering is created for the people who are actually in the room — I combine guided meditation, intentional breathwork, energy awareness, and deep relaxation, and channel the practice around what's present for that group that day. No two gatherings are exactly the same. No experience necessary. Wear something comfortable and bring a yoga mat, plus anything else you need to feel cozy. Tea and water are available. Breathe deeper. Feel clearer. Come back to yourself.</p>
@@ -972,49 +1017,6 @@ setInterval(function(){ showTestimonial((currentTestimonial+1) % 7); }, 5000);
     <h2 class="section-title">Retreats</h2>
     <div class="divider divider-left"></div>
     <p style="color:var(--muted);margin-bottom:3rem;">Land-based spiritual retreats rooted in real place, community, and cosmological inquiry. Sacred site work, ceremony, healing, and transformation in Minnesota and beyond.</p>
-
-    <!-- COMMUNING WITH THE ANCESTORS -->
-    <div class="retreat-card" id="communing">
-      <div class="retreat-meta">
-        <div class="date">Sunday, October 25</div>
-        <div class="price">10 AM–5 PM · $111</div>
-        <div class="status-tag">3 Chairs Remain · Limited to 8</div>
-      </div>
-      <div>
-        <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/CD31A8D9-468C-40CA-A5F7-420BE9D8454E.png" alt="Communing with the Ancestors, Sunday October 25" style="width:100%;height:auto;object-fit:contain;display:block;border-radius:4px;margin-bottom:1rem;">
-        <h3>Communing with the Ancestors</h3>
-        <p>3 ancestral chairs at the table remain. We are all relations. Come join us!</p>
-        <p>Sunday, October 25 | 10 AM–5 PM | $111</p>
-        <p>Only three spaces remain.</p>
-        <p>There are people whose names you know because someone spoke them often enough that they survived. There are people whose faces you recognize from photographs tucked into albums and boxes. There are stories that have been repeated so many times they have become part of the architecture of your family.</p>
-        <p>And then there are the others.</p>
-        <p>The names nobody remembers. The stories nobody told. The ones who crossed oceans or stayed exactly where they were born. The ones who survived wars, hunger, childbirth, heartbreak, migration, marriages, secrets, ordinary Tuesdays and extraordinary grief. The ones whose hands made things, planted things, cooked things, carried babies, buried loved ones and eventually disappeared from living memory.</p>
-        <p>And yet here you are.</p>
-        <p>Communing with the Ancestors is a day for turning toward that enormous lineage behind us.</p>
-        <p>I have taught this retreat before, but no two gatherings have ever been the same. They really couldn’t be. Different people enter the room. Different ancestors come with them. Different stories want to be remembered.</p>
-        <p>On Sunday, October 25, we will spend the day together through meditation, movement, candle magic, altar setting, creative work, food, ritual and communion.</p>
-        <p>And food will matter.</p>
-        <p>I am asking everyone who comes to bring an ancestry dish to share. It might be something your grandmother made. Something connected to your culture or family. Something pulled from an old recipe card. Something you remember eating as a child. Maybe you have to call somebody and ask. Maybe you have to go digging.</p>
-        <p>At lunchtime we will create a feast together, set a place for those who came before us, and invite the ancestors into the communion.</p>
-        <p>There is something wonderfully mysterious about eating a food that has traveled through generations. Somebody taught somebody who taught somebody. Ingredients changed. Measurements disappeared. Recipes crossed borders. Sometimes all that remains is a little of this, enough of that, cook it until it looks right.</p>
-        <p>And somehow we still know how to make it.</p>
-        <p>We will create an ancestral altar together. We will work with candles and intention. We will move and meditate. We will make something with our hands. We will tell stories. We will remember. And we will leave room for whatever happens when eight people gather intentionally around the lives that made their own lives possible.</p>
-        <p>I am limiting this retreat to eight people, because I want it intimate.</p>
-        <p>Five spaces are already spoken for. Three remain.</p>
-        <p>And then we go deeper.</p>
-        <p>Beginning in November, I will begin teaching Ancestral Healing, one Sunday each month from 9 AM–noon.</p>
-        <p>This is not a single retreat. It is an ongoing process of exploring ancestry, inherited patterns, relationship, remembrance, healing and the ways the lives that came before us continue to echo through the lives we are living now.</p>
-        <p>$55 per monthly class.</p>
-        <p>There will be two ways to participate: in person, with limited space, and live on Zoom, so you do not need to live near me to join us.</p>
-        <p>Dates will be released soon.</p>
-        <p>But first, on October 25, we gather at the table.</p>
-        <p>Bring a dish.</p>
-        <p>Bring a photograph if you have one. Bring a name. Bring a story. Bring the questions nobody in your family ever answered.</p>
-        <p>And if you don’t know their names, come anyway.</p>
-        <p>They are still your ancestors.</p>
-        <a href="sms:6128057111" class="btn btn-fill">Text to Reserve · 612-805-7111</a>
-      </div>
-    </div>
 
     <div class="retreat-card">
       <div class="retreat-meta">
@@ -1317,7 +1319,7 @@ setInterval(function(){ showTestimonial((currentTestimonial+1) % 7); }, 5000);
       <div class="book-series-label">Adventures with Our Nana · Children's Book Series</div>
       <div class="book-card" style="margin-top:1rem;">
         <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/E2EBFDD3-C77B-4446-8792-ABCBF94AE87C.jpeg" alt="My Gigi Is a Dragonfly" class="book-cover">
-        <div class="date">First Title Launching Around November 1, 2026</div>
+        <div class="date">First Title Launching November 29, 2026</div>
         <h3>Adventures with Our Nana</h3>
         <p>True adventures with Leila, Luca, and Nana — real outings that turn into stories about curiosity, connection, creativity, courage, and compassion. <em>My Gigi Is a Dragonfly</em> launches first, followed by <em>My Mom Is Better Than Your Mom — A Musical Adventure</em>. <em>Orion</em> and <em>The Coat of Many Colors</em> are both written and in the works, with dates to come.</p>
         <p style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;">Coming Soon</p>
@@ -1328,7 +1330,7 @@ setInterval(function(){ showTestimonial((currentTestimonial+1) % 7); }, 5000);
       <div class="book-series-label">Standalone Memoir</div>
       <div class="book-card" style="margin-top:1rem;">
         <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/1280D57E-89DD-42C7-867F-DEB676CA845F.png" alt="My Mama's a Peacock" class="book-cover">
-        <div class="date">November 2026 · Launching After Adventures with Our Nana</div>
+        <div class="date">Launching November 29, 2026</div>
         <h3>My Mama's a Peacock</h3>
         <p>A memoir of love, adventure, and the beauty in between. Written within six months of her mother's death. Nancy's voice is in it. So is the portal lilac tree. So is every sign that followed.</p>
         <p style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;">Purchase links coming soon via Ingram Spark</p>
@@ -1484,6 +1486,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+</script>
+<script>
+/* HOLIDAY SPARKLES */
+(function(){
+  var sky=document.querySelector('.holiday-sky'); if(!sky) return;
+  var n=window.innerWidth<700?26:46;
+  for(var i=0;i<n;i++){
+    var el=document.createElement('span');
+    var spark=Math.random()<0.55;
+    el.className=spark?'spark':'flake';
+    el.textContent=spark?(Math.random()<0.5?'✦':'✧'):'❄';
+    var size=spark?(0.5+Math.random()*0.9):(0.6+Math.random()*1.1);
+    el.style.left=(Math.random()*100)+'%';
+    el.style.fontSize=size+'rem';
+    var fall=10+Math.random()*14, tw=1.5+Math.random()*2.5;
+    el.style.animationDuration=fall+'s, '+tw+'s';
+    el.style.animationDelay=(-Math.random()*fall)+'s, '+(-Math.random()*tw)+'s';
+    el.style.setProperty('--drift',((Math.random()*80)-40)+'px');
+    el.style.setProperty('--spin',((Math.random()*360)-180)+'deg');
+    el.style.setProperty('--rest',(Math.random()*95)+'%');
+    sky.appendChild(el);
+  }
+})();
 </script>
 </body>
 </html>
