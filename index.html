@@ -657,6 +657,80 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   .holiday-sky span { animation: none; top: var(--rest); opacity: 0.6; }
 }
+
+/* THE LIGHT WE CARRY: holiday season section at the top of the page. To turn off in January, delete this CSS block, the LIGHT WE CARRY section in the page, and the Holidays nav link. */
+.lwc { --wine: #5E1824; --wine-deep: #1A0B0F; --ember: #E9B860; padding: 0; background: var(--wine-deep); border-bottom: 1px solid rgba(201,168,76,0.25); }
+.lwc-hero {
+  position: relative; overflow: hidden;
+  min-height: 100vh; display: flex; align-items: center;
+  padding: calc(var(--ticker-h) + 110px) 2rem 5rem;
+  background:
+    linear-gradient(90deg, rgba(14,6,9,0.92) 0%, rgba(14,6,9,0.72) 45%, rgba(14,6,9,0.15) 80%),
+    url('https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/holiday-background.jpg') 70% center / cover no-repeat;
+}
+.lwc-hero > *:not(.holiday-sky) { position: relative; z-index: 1; }
+.lwc-hero-inner { max-width: 620px; }
+.lwc-brand { font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 1rem; }
+.lwc-title {
+  font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400;
+  font-size: clamp(3.2rem, 11vw, 6.5rem); line-height: 0.95; margin-bottom: 0.6rem;
+  color: var(--gold-light);
+  background: linear-gradient(100deg, #a8862f 0%, #d4b56a 30%, #fff4d2 48%, #d4b56a 62%, #a8862f 100%);
+  background-size: 250% 100%; background-position: 100% 0;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  animation: hh-shimmer 6s ease-in-out infinite;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.85));
+}
+.lwc-sub { font-family: 'Cinzel', serif; font-size: clamp(0.95rem, 2.6vw, 1.25rem); letter-spacing: 0.35em; color: var(--cream); margin-bottom: 2rem; }
+.lwc-intro { font-size: 1.15rem; line-height: 1.8; color: var(--cream); margin-bottom: 2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.9); }
+.lwc-intro strong { color: var(--ember); font-weight: 500; }
+.lwc-body { max-width: 980px; margin: 0 auto; padding: 4.5rem 2rem 5rem; }
+.lwc-h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.1; color: var(--gold-light); margin-bottom: 0.5rem; }
+.lwc-lede { color: var(--muted); font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 640px; }
+/* Santa Lucia Day market: the centerpiece */
+.lwc-lucia { display: grid; grid-template-columns: 1fr 1.1fr; gap: 2.5rem; align-items: start; padding: 2rem; margin-bottom: 4.5rem; background: linear-gradient(160deg, rgba(94,24,36,0.55), rgba(26,11,15,0.9)); border: 1px solid rgba(201,168,76,0.45); }
+.lwc-lucia img { width: 100%; height: auto; display: block; }
+.lwc-when { font-family: 'Cinzel', serif; font-size: 0.95rem; color: var(--gold); margin-bottom: 0.4rem; }
+.lwc-lucia h3 { font-family: 'Cinzel', serif; font-weight: 400; font-size: 1.6rem; line-height: 1.3; color: var(--cream); margin-bottom: 0.8rem; }
+.lwc-lucia p { font-size: 1.02rem; margin-bottom: 1rem; }
+.lwc-slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin: 1.2rem 0 0.8rem; }
+.lwc-slots a { display: block; text-align: center; padding: 0.8rem 0.4rem; border: 1px solid var(--gold); color: var(--cream); font-family: 'Cinzel', serif; font-size: 0.85rem; background: rgba(10,10,10,0.35); transition: background 0.2s, color 0.2s; }
+.lwc-slots a:hover, .lwc-slots a:focus-visible { background: var(--gold); color: var(--dark); }
+.lwc-note { color: var(--muted); font-size: 0.92rem; }
+/* Calendar */
+.lwc-cal { list-style: none; border-top: 1px solid rgba(201,168,76,0.25); }
+.lwc-event { display: grid; grid-template-columns: 7.5rem 200px 1fr; gap: 1.8rem; padding: 2rem 0; border-bottom: 1px solid rgba(201,168,76,0.25); align-items: start; }
+.lwc-date { font-family: 'Cinzel', serif; color: var(--gold); line-height: 1.15; }
+.lwc-date b { display: block; font-weight: 400; font-size: 2.6rem; color: var(--cream); }
+.lwc-date span { font-size: 0.8rem; letter-spacing: 0.1em; }
+.lwc-event img { width: 100%; height: auto; display: block; }
+.lwc-event h3 { font-family: 'Cinzel', serif; font-weight: 400; font-size: 1.2rem; line-height: 1.35; color: var(--cream); margin-bottom: 0.3rem; }
+.lwc-meta { color: var(--gold); font-size: 1rem; margin-bottom: 0.7rem; }
+.lwc-event p { font-size: 1rem; margin-bottom: 0.9rem; }
+.lwc-event .btn { margin: 0.2rem 0.5rem 0.2rem 0; }
+.lwc-text { font-size: 0.95rem; color: var(--muted); }
+.lwc-text a { color: var(--gold); text-decoration: underline; }
+/* Private shopping, sessions, gift */
+.lwc-open { margin-top: 4rem; display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; }
+.lwc-panel { padding: 2rem; border: 1px solid rgba(201,168,76,0.35); background: rgba(94,24,36,0.28); }
+.lwc-panel h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 2rem; line-height: 1.15; color: var(--gold-light); margin-bottom: 0.8rem; }
+.lwc-panel p { font-size: 1.02rem; margin-bottom: 1rem; }
+.lwc-panel .btn { margin: 0.3rem 0.5rem 0.3rem 0; }
+.lwc a:focus-visible, .lwc .btn:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
+@media (max-width: 820px) {
+  .lwc-hero { min-height: auto; display: block; padding: calc(var(--ticker-h) + 44vh) 1.4rem 3.5rem; background:
+    linear-gradient(180deg, rgba(14,6,9,0) 0, rgba(14,6,9,0.1) 28vh, rgba(14,6,9,0.85) 46vh, #0E0609 58vh),
+    url('https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/holiday-background.jpg') 66% top / auto 62vh no-repeat, #0E0609; }
+  .lwc-body { padding: 3.5rem 1.4rem 4rem; }
+  .lwc-lucia { grid-template-columns: 1fr; padding: 1.4rem; }
+  .lwc-slots { grid-template-columns: repeat(2, 1fr); }
+  .lwc-event { grid-template-columns: 1fr; gap: 1rem; }
+  .lwc-date b { display: inline; font-size: 1.9rem; margin-right: 0.5rem; }
+  .lwc-event img { max-width: 360px; }
+  .lwc-open { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .lwc-title { animation: none; background-position: 50% 0; } }
+.hero { min-height: auto; padding-top: 6rem; }
 </style>
 </head>
 <body>
@@ -664,8 +738,8 @@ footer {
 <!-- ANNOUNCEMENT TICKER: to change announcements, edit the lines in BOTH copies below (the second copy keeps the scroll seamless) -->
 <div class="ticker" role="region" aria-label="Announcements">
   <div class="ticker-track">
-    <div><a href="#shop" class="ticker-feature">Your holiday headquarters for all things magical</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#classes">Monthly Meditation &amp; Breathwork · Thursday, November 12 · 6:30–8 PM</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#classes">Monthly Intuitive Development · Tuesday, November 17 · 6:30–8:30 PM</a><span class="ticker-star" aria-hidden="true">✦</span><a href="https://kristinwolf.as.me">Black Friday · Friday, November 27 · open for appointments in the healing room</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#shop-visit">Small Business Saturday · the shop is open Saturday, November 28 · 9 AM–4 PM · Zimmerman</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#ancestry-healing" class="ticker-feature">Ancestral Healing: The Journey Back to You · first class Sunday, November 29 · 9 AM–noon · in person in Zimmerman one Sunday a month through June (10 seats) or from anywhere with each class emailed to you plus one Zoom call a month · $55 a month for 8 months · text 612-805-7111</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#books">November 29 · release day for My Mama’s a Peacock and My Gigi Is a Dragonfly</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#retreats">The Wisdom of Water winter retreat · February 5–8 · $444 all inclusive</a><span class="ticker-star" aria-hidden="true">✦</span><a href="https://substack.com/@kristinwolf2/note/c-379983542?r=3p1amq&amp;utm_medium=ios&amp;utm_source=notes-share-action" target="_blank" rel="noopener">The November newsletter is up on Substack</a><span class="ticker-star" aria-hidden="true">✦</span></div>
-    <div aria-hidden="true"><a href="#shop" class="ticker-feature" tabindex="-1">Your holiday headquarters for all things magical</a><span class="ticker-star">✦</span><a href="#classes" tabindex="-1">Monthly Meditation &amp; Breathwork · Thursday, November 12 · 6:30–8 PM</a><span class="ticker-star">✦</span><a href="#classes" tabindex="-1">Monthly Intuitive Development · Tuesday, November 17 · 6:30–8:30 PM</a><span class="ticker-star">✦</span><a href="https://kristinwolf.as.me" tabindex="-1">Black Friday · Friday, November 27 · open for appointments in the healing room</a><span class="ticker-star">✦</span><a href="#shop-visit" tabindex="-1">Small Business Saturday · the shop is open Saturday, November 28 · 9 AM–4 PM · Zimmerman</a><span class="ticker-star">✦</span><a href="#ancestry-healing" class="ticker-feature" tabindex="-1">Ancestral Healing: The Journey Back to You · first class Sunday, November 29 · 9 AM–noon · in person in Zimmerman one Sunday a month through June (10 seats) or from anywhere with each class emailed to you plus one Zoom call a month · $55 a month for 8 months · text 612-805-7111</a><span class="ticker-star">✦</span><a href="#books" tabindex="-1">November 29 · release day for My Mama’s a Peacock and My Gigi Is a Dragonfly</a><span class="ticker-star">✦</span><a href="#retreats" tabindex="-1">The Wisdom of Water winter retreat · February 5–8 · $444 all inclusive</a><span class="ticker-star">✦</span><a href="https://substack.com/@kristinwolf2/note/c-379983542?r=3p1amq&amp;utm_medium=ios&amp;utm_source=notes-share-action" target="_blank" rel="noopener" tabindex="-1">The November newsletter is up on Substack</a><span class="ticker-star">✦</span></div>
+    <div><a href="#holidays" class="ticker-feature">The Light We Carry · our holiday season is here</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#classes">Meditation &amp; Breathwork · Thursday, November 12 · 6:30–8 PM</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#holiday-calendar">Rune Making · Tuesday, November 17 · 6:30–8:30 PM · 8 spots, filling up</a><span class="ticker-star" aria-hidden="true">✦</span><a href="https://kristinwolf.as.me">Black Friday · Friday, November 27 · open for appointments in the healing room</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#holiday-calendar">Small Business Saturday · November 28 · 9 AM–4 PM · new arrivals, make-and-take bath salts and sprays, giveaways</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#ancestry-healing">Ancestral Healing: The Journey Back to You · first class Sunday, November 29 · 9 AM–noon · in person in Zimmerman one Sunday a month through June (10 seats) or from anywhere with each class emailed to you plus one Zoom call a month · $55 a month for 8 months · text 612-805-7111</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#books">November 29 · release day for My Mama’s a Peacock and My Gigi Is a Dragonfly</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#holiday-calendar">The Beauty of Winter · Meditation &amp; Breathwork · Thursday, December 3 · 6:30–8 PM</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#holiday-calendar">I Am Light · Chakra Flame Divination · Tuesday, December 8 · 6:30–8:30 PM</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#holiday-calendar">Santa Lucia: Crowns of Light Retreat · Saturday, December 12 · 9 AM–2 PM · 12 spaces</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#santa-lucia-day" class="ticker-feature">Holiday Makers Market · Santa Lucia Day, Sunday, December 13 · make four gifts for $33 · only 60 tickets</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#holiday-calendar">Make Your Own Lefse · December 18 and 19 · 6 spaces each</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#private-shopping">Book private holiday shopping on any day without an event</a><span class="ticker-star" aria-hidden="true">✦</span><a href="#retreats">The Wisdom of Water winter retreat · February 5–8 · $444 all inclusive</a><span class="ticker-star" aria-hidden="true">✦</span><a href="https://substack.com/@kristinwolf2/note/c-379983542?r=3p1amq&amp;utm_medium=ios&amp;utm_source=notes-share-action" target="_blank" rel="noopener">The November newsletter is up on Substack</a><span class="ticker-star" aria-hidden="true">✦</span></div>
+    <div aria-hidden="true"><a href="#holidays" class="ticker-feature" tabindex="-1">The Light We Carry · our holiday season is here</a><span class="ticker-star">✦</span><a href="#classes" tabindex="-1">Meditation &amp; Breathwork · Thursday, November 12 · 6:30–8 PM</a><span class="ticker-star">✦</span><a href="#holiday-calendar" tabindex="-1">Rune Making · Tuesday, November 17 · 6:30–8:30 PM · 8 spots, filling up</a><span class="ticker-star">✦</span><a href="https://kristinwolf.as.me" tabindex="-1">Black Friday · Friday, November 27 · open for appointments in the healing room</a><span class="ticker-star">✦</span><a href="#holiday-calendar" tabindex="-1">Small Business Saturday · November 28 · 9 AM–4 PM · new arrivals, make-and-take bath salts and sprays, giveaways</a><span class="ticker-star">✦</span><a href="#ancestry-healing" tabindex="-1">Ancestral Healing: The Journey Back to You · first class Sunday, November 29 · 9 AM–noon · in person in Zimmerman one Sunday a month through June (10 seats) or from anywhere with each class emailed to you plus one Zoom call a month · $55 a month for 8 months · text 612-805-7111</a><span class="ticker-star">✦</span><a href="#books" tabindex="-1">November 29 · release day for My Mama’s a Peacock and My Gigi Is a Dragonfly</a><span class="ticker-star">✦</span><a href="#holiday-calendar" tabindex="-1">The Beauty of Winter · Meditation &amp; Breathwork · Thursday, December 3 · 6:30–8 PM</a><span class="ticker-star">✦</span><a href="#holiday-calendar" tabindex="-1">I Am Light · Chakra Flame Divination · Tuesday, December 8 · 6:30–8:30 PM</a><span class="ticker-star">✦</span><a href="#holiday-calendar" tabindex="-1">Santa Lucia: Crowns of Light Retreat · Saturday, December 12 · 9 AM–2 PM · 12 spaces</a><span class="ticker-star">✦</span><a href="#santa-lucia-day" class="ticker-feature" tabindex="-1">Holiday Makers Market · Santa Lucia Day, Sunday, December 13 · make four gifts for $33 · only 60 tickets</a><span class="ticker-star">✦</span><a href="#holiday-calendar" tabindex="-1">Make Your Own Lefse · December 18 and 19 · 6 spaces each</a><span class="ticker-star">✦</span><a href="#private-shopping" tabindex="-1">Book private holiday shopping on any day without an event</a><span class="ticker-star">✦</span><a href="#retreats" tabindex="-1">The Wisdom of Water winter retreat · February 5–8 · $444 all inclusive</a><span class="ticker-star">✦</span><a href="https://substack.com/@kristinwolf2/note/c-379983542?r=3p1amq&amp;utm_medium=ios&amp;utm_source=notes-share-action" target="_blank" rel="noopener" tabindex="-1">The November newsletter is up on Substack</a><span class="ticker-star">✦</span></div>
   </div>
 </div>
 
@@ -673,6 +747,7 @@ footer {
   <div class="nav-logo"><img src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/612E00D3-FCDD-4F6A-9CCF-B6CAC466E13C.png" alt="Magic Mushrooms in the Crystal Garden" style="height:45px;width:auto;vertical-align:middle;margin-right:0.5rem;"><span>Magic Mushrooms in the Crystal Garden</span></div>
   <button class="nav-hamburger" onclick="toggleMenu(this)" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <div class="nav-links">
+    <a href="#holidays">Holidays</a>
     <a href="#shop-visit">Visit the Shop</a>
     <a href="#what-to-expect">What to Expect</a>
     <a href="#sessions">Book a Session</a>
@@ -687,10 +762,139 @@ footer {
   </div>
 </nav>
 
+<!-- THE LIGHT WE CARRY: holiday season, November and December. To turn off in January, delete from here to END THE LIGHT WE CARRY, plus the matching CSS block and the Holidays nav link. -->
+<section class="lwc" id="holidays">
+  <div class="lwc-hero">
+    <div class="holiday-sky" aria-hidden="true"></div>
+    <div class="lwc-hero-inner">
+      <p class="lwc-brand">Magic Mushrooms in the Crystal Garden</p>
+      <h2 class="lwc-title">The Light We Carry</h2>
+      <p class="lwc-sub">WE ARE LIGHT</p>
+      <p class="lwc-intro">This holiday season is about community, shopping small, finding joy in the small things, and making gifts and memories with your own hands. <strong>Santa Lucia Day, December 13,</strong> is the heart of the season. Lucia carried light into the darkest time of the year, and every class, retreat, and market here is a chance to carry yours.</p>
+      <a href="#holiday-calendar" class="btn btn-fill">See the Holiday Calendar</a>
+      <a href="#private-shopping" class="btn">Book Private Shopping</a>
+    </div>
+  </div>
+
+  <div class="lwc-body">
+    <div class="lwc-lucia" id="santa-lucia-day">
+      <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/makers-market.jpg" alt="The Light We Carry Holiday Makers Market on Santa Lucia Day, Sunday December 13, with six crafting times from 9 AM to 9 PM">
+      <div>
+        <p class="lwc-when">Sunday, December 13 · Santa Lucia Day</p>
+        <h3>The Light We Carry Holiday Makers Market</h3>
+        <p>Bring your family and make four handmade gifts together: 4×4 snowman paintings, Swedish stars, Scandinavian gnomes, and Yule intention ornaments. Your $33 covers your materials. The shop is open all day, and local makers will have their handmade work for sale, so you can do your holiday shopping and support small businesses in the same trip.</p>
+        <p>Choose your two-hour crafting time. Only 60 tickets are available for the whole day.</p>
+        <div class="lwc-slots" role="group" aria-label="Crafting times on December 13"><a href="https://kristinwolf.as.me/?appointmentType=100401493">9–11 AM</a><a href="https://kristinwolf.as.me/?appointmentType=100401577">11 AM–1 PM</a><a href="https://kristinwolf.as.me/?appointmentType=100401872">1–3 PM</a><a href="https://kristinwolf.as.me/?appointmentType=100401934">3–5 PM</a><a href="https://kristinwolf.as.me/?appointmentType=100401988">5–7 PM</a><a href="https://kristinwolf.as.me/?appointmentType=100402052">7–9 PM</a></div>
+        <p class="lwc-note">$33 per craft participant · Families welcome · Local makers who want a spot at the market, text <a href="sms:6128057111">612-805-7111</a>.</p>
+      </div>
+    </div>
+
+    <h2 class="lwc-h2" id="holiday-calendar">The Holiday Calendar</h2>
+    <p class="lwc-lede">Every class and gathering from Rune Making through Lefse, in order.</p>
+    <ol class="lwc-cal">
+      <li class="lwc-event">
+        <div class="lwc-date"><b>17</b><span>Tue · Nov</span></div>
+        <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/rune-making.jpg" alt="Rune Making, Intuitive Development, Tuesday November 17">
+        <div>
+          <h3>Intuitive Development: Rune Making</h3>
+          <div class="lwc-meta">6:30–8:30 PM · $22 · 8 spots · filling up</div>
+          <p>Make your own set of runes on stones gathered with intention from the shores of Lake Superior. You’ll take home a guide to what each rune means, read with your runes for the first time, and dedicate and bless your stones. Bring an item to exchange for our monthly mediumship practice.</p>
+          <a href="https://kristinwolf.as.me/?appointmentType=98065346" class="btn btn-fill">Reserve Your Spot</a>
+        </div>
+      </li>
+      <li class="lwc-event">
+        <div class="lwc-date"><b>28</b><span>Sat · Nov</span></div>
+        <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/small-business-saturday.jpg" alt="Small Business Saturday, November 28">
+        <div>
+          <h3>Small Business Saturday</h3>
+          <div class="lwc-meta">9 AM–4 PM · the shop is open</div>
+          <p>Start your holiday shopping with new arrivals in the shop and a make-and-take table where you can blend your own bath salts and create your own spray. Everyone who shops with us that day has a chance to win a giveaway for a session.</p>
+          
+        </div>
+      </li>
+      <li class="lwc-event">
+        <div class="lwc-date"><b>3</b><span>Thu · Dec</span></div>
+        <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/35DC792C-908F-4008-B33E-20E2A9E3149B.png" alt="The Beauty of Winter, Meditation and Breathwork, Thursday December 3">
+        <div>
+          <h3>Meditation &amp; Breathwork: The Beauty of Winter</h3>
+          <div class="lwc-meta">6:30–8 PM · $44</div>
+          <p>Prepare for the Winter Solstice and the art of going within. Nature slows down in winter, and this practice gives you time to listen to yourself, with room for rest, reflection, and restoration.</p>
+          <p class="lwc-text">Text <a href="sms:6128057111">612-805-7111</a> or send a DM to reserve your spot.</p>
+        </div>
+      </li>
+      <li class="lwc-event">
+        <div class="lwc-date"><b>8</b><span>Tue · Dec</span></div>
+        <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/i-am-light.jpg" alt="I Am Light, a chakra flame divination practice, Tuesday December 8">
+        <div>
+          <h3>Intuitive Development: I Am Light</h3>
+          <div class="lwc-meta">A Chakra Flame Divination Practice · 6:30–8:30 PM · $22</div>
+          <p>Make seven chakra flame cards, one for each of your energy centers, layering shades and textures until each flame is your own. Dedicate each card intuitively, then learn to read with your set and take home a divination practice you made yourself.</p>
+          <p class="lwc-text">Text <a href="sms:6128057111">612-805-7111</a> or send a DM to reserve your spot.</p>
+        </div>
+      </li>
+      <li class="lwc-event">
+        <div class="lwc-date"><b>12</b><span>Sat · Dec</span></div>
+        <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/5012B029-EC79-4549-9DC3-22DFBDC92773.png" alt="Santa Lucia Crowns of Light Retreat, Saturday December 12">
+        <div>
+          <h3>Santa Lucia: Crowns of Light Retreat</h3>
+          <div class="lwc-meta">9 AM–2 PM · $111 · 12 spaces</div>
+          <p>Spend a day celebrating Santa Lucia. Make an evergreen crown with sumac and pinecones, hand-roll four beeswax intention candles, work with the four elements, and share in a traditional holiday cookie exchange. You’ll go home with your crown and your candles.</p>
+          <a href="https://kristinwolf.as.me/?appointmentType=100401380" class="btn btn-fill">Reserve the Retreat</a>
+        </div>
+      </li>
+      <li class="lwc-event">
+        <div class="lwc-date"><b>13</b><span>Sun · Dec</span></div>
+        <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/makers-market.jpg" alt="Holiday Makers Market on Santa Lucia Day, Sunday December 13">
+        <div>
+          <h3>The Light We Carry Holiday Makers Market</h3>
+          <div class="lwc-meta">Santa Lucia Day · 9 AM–9 PM · $33 per craft participant</div>
+          <p>Make four handmade gifts with your family and shop local makers. Pick your two-hour crafting time in the Santa Lucia Day feature above.</p>
+          <a href="#santa-lucia-day" class="btn">Choose a Time</a>
+        </div>
+      </li>
+      <li class="lwc-event">
+        <div class="lwc-date"><b>18</b><span>Fri · Dec</span></div>
+        <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/lefse-dec-18.jpg" alt="Make Your Own Lefse, Friday December 18">
+        <div>
+          <h3>Make Your Own Lefse</h3>
+          <div class="lwc-meta">Friday 6–9 PM · $44 · 6 spaces</div>
+          <p>Whether you grew up making lefse with your grandmother or have never tried it, you’re welcome. Get your hands in the dough, learn to roll and cook it, and take home lefse you made yourself.</p>
+          <a href="https://kristinwolf.as.me/?appointmentType=100402131" class="btn btn-fill">Reserve Friday</a>
+        </div>
+      </li>
+      <li class="lwc-event">
+        <div class="lwc-date"><b>19</b><span>Sat · Dec</span></div>
+        <img loading="lazy" src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/lefse-dec-19.jpg" alt="Make Your Own Lefse, Saturday December 19">
+        <div>
+          <h3>Make Your Own Lefse</h3>
+          <div class="lwc-meta">Saturday 10 AM–1 PM · $44 · 6 spaces</div>
+          <p>The same hands-on lefse class on Saturday morning. Learn to roll and cook it, and take home lefse you made yourself.</p>
+          <a href="https://kristinwolf.as.me/?template=class" class="btn btn-fill">Reserve Your Spot</a>
+        </div>
+      </li>
+    </ol>
+
+    <div class="lwc-open" id="private-shopping">
+      <div class="lwc-panel">
+        <h3>Private shopping on any open day</h3>
+        <p>On any day without an event, book private shopping time and have the shop to yourself for your holiday gifts. Tell us who’s on your list, and we’ll help you find something meaningful for each of them.</p>
+        <p>Readings, healing sessions, and breathwork book the same way, any time Kristin is available.</p>
+        <a href="https://kristinwolf.as.me/?appointmentType=83747052" class="btn btn-fill">Shop 30 Min</a>
+        <a href="https://kristinwolf.as.me/?appointmentType=83747205" class="btn btn-fill">Shop 60 Min</a>
+        <a href="#sessions" class="btn">Book a Session</a>
+      </div>
+      <div class="lwc-panel">
+        <h3>Give the gift of a SOUL Blueprint</h3>
+        <p>A SOUL Blueprint is your map, charted from your natal chart in six written documents. Give one to yourself, or give one to someone you love so they can have their own map. $444, available wherever you live.</p>
+        <a href="#soul-blueprint" class="btn">See SOUL Blueprint</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END THE LIGHT WE CARRY -->
+
 <!-- HERO -->
 <section class="hero">
-  <div class="holiday-sky" aria-hidden="true"></div>
-  <h2 class="holiday-header"><span class="hh-main">Your Holiday Headquarters</span><span class="hh-sub">for all things magical</span></h2>
   <img src="https://raw.githubusercontent.com/kwolf0204-hub/Crystal-garden/main/63D2DFEA-2A75-4847-AED1-968D9CBEB77F.png" alt="Magic Mushrooms in the Crystal Garden" style="width:280px;max-width:80%;height:auto;border-radius:12px;margin-bottom:2rem;box-shadow:0 4px 30px rgba(0,0,0,0.8);">
   <div class="hero-eyebrow">Magic Mushrooms in the Crystal Garden</div>
   <h1>Kristin Wolf<span>Metaphysical Teacher · Channeler · Soul Cartographer · Crystal Healer</span></h1>
